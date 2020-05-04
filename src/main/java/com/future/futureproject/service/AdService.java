@@ -3,11 +3,10 @@ package com.future.futureproject.service;
 import com.future.futureproject.domain.model.AdModel;
 
 public interface AdService {
-    AdModel addAd(AdModel model);
 
-    void deleteAd(String id);
+    void delete(Integer id);
 
-    AdModel updateAd(AdModel model);
+    AdModel save(AdModel model);
 
     AdModel selectById(Integer id);
 }

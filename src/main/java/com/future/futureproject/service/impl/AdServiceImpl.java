@@ -22,18 +22,20 @@ public class AdServiceImpl implements AdService {
     private AdMapper adMapper;
 
     @Override
-    public AdModel addAd(AdModel model) {
-        return null;
+    public void delete(Integer id) {
+        if (Objects.nonNull(id)) {
+            adRepository.deleteById(id);
+        }
     }
 
     @Override
-    public void deleteAd(String id) {
+    public AdModel save(AdModel model) {
+        if (Objects.isNull(model))
+            return null;
 
-    }
-
-    @Override
-    public AdModel updateAd(AdModel model) {
-        return null;
+        AdEntity entity = adMapper.toEntity(model);
+        AdEntity saved = adRepository.save(entity);
+        return adMapper.toModel(saved);
     }
 
     @Override
@@ -41,11 +43,7 @@ public class AdServiceImpl implements AdService {
         if (Objects.isNull(id))
             return null;
 
-        AdEntity adEntity = adRepository.findById(id).orElse(null);
-        if (Objects.isNull(adEntity))
-            return null;
-
-
-        return adMapper.toModel(adEntity);
+        AdEntity entity = adRepository.findById(id).orElse(null);
+        return adMapper.toModel(entity) ;
     }
 }
