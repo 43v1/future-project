@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{header :: head_declaration}"></head>
 <body>
-    <h3 style="text-align: center">IT WORKS</h3>
+<header th:replace="~{header :: header}"></header>
+
+
+<div class="container main-content ">
+
+    <div class="z-depth-2 white m_T2em p_50px">
+        <div class="center">
+            <div>Page title</div>
+        </div>
+
+        <div>
+            <div class="row">
+                Body content
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<footer th:replace="~{footer :: footer}"></footer>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head_declaration">
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+
+    <!--<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.css}"/>-->
+    <link rel="stylesheet" th:href="@{/css/materialize.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+</head>
+
+<body th:fragment="header" th:remove="tag">
+
+<nav>
+    <div class="nav-wrapper blue darken-3">
+        <div >
+            <a href="#" class="brand-logo">
+             <img th:src="@{/img/logo.jpg}">
+            </a>
+        </div>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header>
+
+
+</header>
+
+</body>
+</html>
