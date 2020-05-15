@@ -26,31 +26,29 @@ public class TireServiceImpl implements TireService {
         if (Objects.isNull(id))
             return null;
 
-        TireEntity tireEntity = tireRepository.findById(id).orElse(null);
-        if (Objects.isNull(tireEntity))
+        TireEntity entity = tireRepository.findById(id).orElse(null);
+        if (Objects.isNull(entity))
             return null;
 
+        return tireMapper.toModel(entity);
+    }
 
-        return tireMapper.toModel(tireEntity);
+    @Override
+    public void delete(Integer id) {
+        if (Objects.nonNull(id)) {
+            tireRepository.deleteById(id);
+        }
     }
 
     @Override
     public TireModel save(TireModel model) {
+        if (Objects.isNull(model))
+            return null;
+
         TireEntity entity = tireMapper.toEntity(model);
-        if (Objects.isNull(entity)) {
-            return null;
-        }
-
-        TireEntity savedObject = tireRepository.save(entity);
-        if (Objects.isNull(savedObject)) {
-            return null;
-        }
-
-        return tireMapper.toModel(savedObject);
-    }
-
-    @Override
-    public void delete(String id) {
+        TireEntity saved = tireRepository.save(entity);
+        return tireMapper.toModel(saved);
 
     }
+
 }
