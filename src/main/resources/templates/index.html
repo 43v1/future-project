@@ -3,22 +3,24 @@
 <head th:replace="~{header :: head_declaration}"></head>
 <body>
 <header th:replace="~{header :: header}"></header>
+<header th:replace="~{header :: aside}"></header>
 
 
-<div class="container main-content ">
+<div class="content-container" style="padding-left: 300px">
+    <div class=" main-content ">
+        <div class="z-depth-2 white m_T2em p_25px">
+            <div class="center">
+                <h5>Page title</h5>
+            </div>
 
-    <div class="z-depth-2 white m_T2em p_50px">
-        <div class="center">
-            <div>Page title</div>
-        </div>
-
-        <div>
-            <div class="row">
-                Body content
+            <div>
+                <div class="row">
+                    Body content
+                </div>
             </div>
         </div>
-    </div>
 
+    </div>
 </div>
 
 
